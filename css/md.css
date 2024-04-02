@@ -1,0 +1,188 @@
+@media screen and (max-width: 1024px){
+    *{
+        padding: 0;
+    }
+    .header{
+        padding: 0;
+    }
+    .s-1{
+        background: url(../img/recycled-shoe-store-hero-image-bg.jpg);
+        background-size: cover;
+        height: 440px;
+        margin: 0;
+    }
+    
+    h1{
+        font-size: 48px;
+    }
+    .s1{
+        width:  960px;
+    }
+
+    /* section two  */
+
+    .s-2{
+        padding: 0;
+        gap: 0px;
+    }
+
+   .s-2 :first-child{
+     width: 100%;
+   }
+
+}
+@media screen and (max-width: 768px){
+    *{
+        padding: 0;
+    }
+   
+    .s-1{
+        background: url(../img/recycled-shoe-store-hero-image-bg.jpg);
+        background-size: cover;
+        height: 360px;
+        margin: 0;
+    }
+    .s1{
+        width:  668px;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between; 
+    }
+    .hed{
+        display: none;
+    }
+    .cnv{
+        display: block;
+    }
+    
+    .offc-ditels{
+        padding: 0;
+    }
+    .offc-ditels li{
+        width: 100%;
+        height: 70px;
+        border-bottom: 1px solid #c1c1c1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 14px;
+        padding:34px 25px;
+    }
+    .offcanvas-body{
+        padding: 0;
+        margin: 0;
+    }
+    .s1{
+        width:  704 px;
+    }
+    /* section two  */
+    .s-2 div img {
+        width: 150px;
+        height: 84px;
+    }
+    
+}
+
+@media screen and (max-width: 425px){
+    .s-1{
+        background: url(../img/recycled-shoe-store-hero-image-bg.jpg);
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 518px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .btn1{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .s1 div div{
+        width: 100%;
+    } 
+    .s1{
+        width:  100%;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+    }
+    .s1 div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+    }
+    .spes{
+        letter-spacing: 4px;
+        font-weight: 700;
+    }
+    /* section two  */
+
+    .s-2{
+        height: 349px;
+        justify-content: center;
+        padding: 24px 16px;
+    }
+    .s-2 :first-child{
+        width:180px;
+      }
+      .s-2 div img {
+        width: 180px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .header{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+    }
+   .imglogo{
+        width: 24px;
+        height: 24px;
+   }
+   .offc-ditels{
+    font-size: 20px;
+    font-weight: bold;
+   }
+   .btn{
+     padding: 0;
+   }
+    /* section two  */
+    .s-2 :first-child{
+        width:170px;
+      }
+
+    .s-2 div img {
+        width: 170px;
+        height: 100px;
+    }
+
+}
+
+@media screen and (max-width: 320px){
+    ul{
+        padding: 0;
+    }
+    .btn{
+        padding: 6px 12px;
+      }
+    /* section two  */
+    .s-2{
+        height: 290px;
+        padding: 0;
+    }
+    .s-2 :first-child{
+        width:140px;
+      }
+
+    .s-2 div img {
+        width: 140px;
+        height: 80px;
+    }
+}
