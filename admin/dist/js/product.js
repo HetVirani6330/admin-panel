@@ -18,58 +18,65 @@ let prodData = () => {
     let pprice = document.proName.price.value;
     let disc = document.proName.desc.value;
 
+    let image = JSON.parse(localStorage.getItem('image'))
+
 
     let obj = '';
 
-
-    if (pid != '') {
-        console.log("hello");
-        data.map((i)=>{
-            if(i.id == pid){
-                i.cid=cid, 
-                i.name = name
-                i.price = pprice
-                i.discription=disc
+    if(cid && name && pprice  != ""){
+        if (pid != '') {
+            console.log("hello");
+            data.map((i)=>{
+                if(i.id == pid){
+                    i.cid=cid, 
+                    i.name = name
+                    i.price = pprice
+                    i.discription=disc,
+                    i.image=image
+                }
+            })
+            localStorage.setItem("productInfo",JSON.stringify(data));
+            // pid = ''
+        } else {
+            if (data != null) {
+                console.log("hello2");
+                //insert
+                obj = {
+                    id: data.length + 1,
+                    name: name,
+                    price: pprice,
+                    discription: disc,
+                    cid: cid,
+                    image:image
+                }
+        
+                arr2 = data
             }
-        })
-        localStorage.setItem("productInfo",JSON.stringify(data));
-        // pid = ''
-    } else {
-        if (data != null) {
-            console.log("hello2");
-            //insert
-            obj = {
-                id: data.length + 1,
-                name: name,
-                price: pprice,
-                discription: disc,
-                cid: cid,
+            else {
+                //new arr push
+                obj = {
+                    id: 1,
+                    name: name,
+                    price: pprice,
+                    discription: disc,
+                    cid: cid,
+                    image:image
+                }
             }
+            arr2.push(obj)
+            localStorage.setItem("productInfo", JSON.stringify(arr2));
+        }
     
-            arr2 = data
-        }
-        else {
-            //new arr push
-            obj = {
-                id: 1,
-                name: name,
-                price: pprice,
-                discription: disc,
-                cid: cid,
-            }
-        }
-        arr2.push(obj)
-        localStorage.setItem("productInfo", JSON.stringify(arr2));
+    
+       
+    
+        document.proName.pid.value = "" 
+        document.proName.prName.value = ""    
+        document.proName.reset()
+    
+        disCat()
     }
 
-
-   
-
-    document.proName.pid.value = "" 
-    document.proName.prName.value = ""    
-    document.proName.reset()
-
-    disCat()
 }
 
 let disCat = () => {
@@ -87,6 +94,7 @@ let disCat = () => {
         tr += `
             <tr>
                 <td>${i.id}</td>   
+                <td><img src="${i.image}" alt="" width=100 height=80></td> 
                 <td>${i.proname}</td>  
                 <td>${i.name}</td>
                 <td>${i.price}</td> 
@@ -119,7 +127,7 @@ let editData=(id)=>{
     let data = JSON.parse(localStorage.getItem('productInfo'));
     let cat = data.filter((i)=>{
         return i.id == id
-    })
+    }) 
     document.proName.pid.value=cat[0].id;
     document.proName.prName.value=cat[0].name;
     document.proName.price.value=cat[0].price
@@ -131,6 +139,19 @@ let editData=(id)=>{
 
 
     
+}
+
+const showImage = (e)=>{
+    var input =  e.target
+    var image = document.getElementById('preview');
+    if (input.files && input.files[0]) {
+       var reader = new FileReader();
+       reader.onload = function(e) {
+          image.src = e.target.result;
+          localStorage.setItem("image",JSON.stringify(e.target.result))
+       }
+       reader.readAsDataURL(input.files[0]);
+    }
 }
 
 

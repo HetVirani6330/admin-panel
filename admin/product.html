@@ -118,7 +118,7 @@
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                        <input class="form-control form-control-sidebar" t  ype="search" placeholder="Search"
                             aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-sidebar">
@@ -133,7 +133,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
 
-                        <li class="nav-item menu-open">
+                        <li class="nav-item ">
                             <a href="./index.html" class="nav-link ">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
@@ -150,7 +150,7 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item menu-open">
                             <a href="product.html" class="nav-link active">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
@@ -193,7 +193,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form name="proName" action="#" method="post">  
+                <form name="proName" action="#" method="post" enctype="multipart/form-data">  
                     <input type="hidden" name="pid" id="pid">
                   <div class="card-body">
                     <div class="form-group">
@@ -213,6 +213,11 @@
                       <div class="form-group">
                         <label for="exampleInputEmail1">discription</label>
                         <textarea name="desc" id="desc" class=" form-control"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label >Image</label>
+                        <input type="file" name="image" id="image" accept="image/*"  onchange="showImage(event)">
+                        <img src="" alt="" width="100" height="100" id="preview" name="image">
                       </div>
                    
                   </div>    
@@ -242,8 +247,9 @@
                   <div class="card-body p-0">
                     <table class="table">
                       <thead>
-                        <tr>
+                        <tr >
                           <th style="width: 10px">#</th>
+                          <th>Image</th>
                           <th>CATEGORY</th>
                           <th>NAME</th>
                           <th>PRICE</th>
