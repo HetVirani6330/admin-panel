@@ -73,6 +73,8 @@ let prodData = () => {
 }
 
 let disCat = () => {
+    id = document.proName.pid.value
+    document.getElementById("btn").innerHTML=(id!="")?"Update":"Submit";
     let data = JSON.parse(localStorage.getItem('productInfo'));
     let catdata = JSON.parse(localStorage.getItem('catInfo'));
     let tr = ''
@@ -123,6 +125,10 @@ let editData=(id)=>{
     document.proName.price.value=cat[0].price
     document.proName.catid.value =cat[0].cid;
     document.proName.desc.value  = cat[0].discription ;
+
+    id = document.proName.pid.value
+    document.getElementById("btn").innerHTML=(id!="")?"Update":"Submit";
+
 
     
 }

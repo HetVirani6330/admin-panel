@@ -46,6 +46,8 @@ let disData = () => {
 }
 
 let disCat = () => {
+    id=document.frmName.catid.value
+    document.getElementById('btn').innerHTML = (id!="") ? "Update":"Submit";
     let data = JSON.parse(localStorage.getItem('catInfo'));
     let tr = ''
     data.map((i) => {
@@ -87,6 +89,9 @@ let editData = (id) => {
     })
     document.frmName.iptName.value = cat[0].name;
     document.frmName.catid.value = cat[0].id;
+
+    id=document.frmName.catid.value
+    document.getElementById('btn').innerHTML = (id!="") ? "Update":"Submit";
 
 }
 
