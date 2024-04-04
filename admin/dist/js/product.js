@@ -32,7 +32,7 @@ let prodData = () => {
                     i.name = name
                     i.price = pprice
                     i.discription=disc,
-                    i.image=image
+                    i.image = image
                 }
             })
             localStorage.setItem("productInfo",JSON.stringify(data));
@@ -72,6 +72,7 @@ let prodData = () => {
     
         document.proName.pid.value = "" 
         document.proName.prName.value = ""    
+        document.image.src = ""
         document.proName.reset()
     
         disCat()
@@ -133,6 +134,7 @@ let editData=(id)=>{
     document.proName.price.value=cat[0].price
     document.proName.catid.value =cat[0].cid;
     document.proName.desc.value  = cat[0].discription ;
+    document.image.src = cat[0].image;
 
     id = document.proName.pid.value
     document.getElementById("btn").innerHTML=(id!="")?"Update":"Submit";
